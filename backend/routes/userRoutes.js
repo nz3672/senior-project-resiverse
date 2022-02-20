@@ -5,7 +5,7 @@ const {
   setUsers,
   updateUsers,
   deleteUsers,
-} = require("../controllers/userController");
+} = require("../controllers/tenantController");
 
 router.route("/").get(getUsers).post(setUsers);
 router.route("/:id").put(updateUsers).delete(deleteUsers);

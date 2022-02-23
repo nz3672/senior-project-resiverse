@@ -21,6 +21,7 @@ const setBuilding = asyncHandler(async (req, res) => {
     bd_state: req.body.bd_state,
     bd_cert: req.body.bd_cert,
     bd_type: req.body.bd_type,
+    u_id: req.body.u_id,
   });
 
   res.status(200).json(building);

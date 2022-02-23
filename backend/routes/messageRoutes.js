@@ -6,9 +6,10 @@ const {
   updateMessage,
   deleteMessage,
 } = require("../controllers/messageController");
+const { protect } = require("../middleware/authMiddleware");
 
-router.route("/").get(getMessage).post(setMessage);
-router.route("/:id").put(updateMessage).delete(deleteMessage);
+router.route("/").get(protect, getMessage).post(protect, setMessage);
+router.route("/:id").put(protect, updateMessage).delete(protect, deleteMessage);
 
 // router.get("/", getMessage);
 

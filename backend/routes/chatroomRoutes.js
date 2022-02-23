@@ -6,9 +6,13 @@ const {
   updateChatroom,
   deleteChatroom,
 } = require("../controllers/chatroomController");
+const { protect } = require("../middleware/authMiddleware");
 
-router.route("/").get(getChatroom).post(setChatroom);
-router.route("/:id").put(updateChatroom).delete(deleteChatroom);
+router.route("/").get(protect, getChatroom).post(protect, setChatroom);
+router
+  .route("/:id")
+  .put(protect, updateChatroom)
+  .delete(protect, deleteChatroom);
 
 // router.get("/", getChatroom);
 

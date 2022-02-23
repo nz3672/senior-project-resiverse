@@ -18,6 +18,7 @@ const setMessage = asyncHandler(async (req, res) => {
   const message = await Message.create({
     msg_message: req.body.msg_message,
     msg_sender_id: req.body.msg_sender_id,
+    cr_id: req.body.cr_id,
   });
 
   res.status(200).json(message);

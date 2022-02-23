@@ -20,6 +20,7 @@ const setTransList = asyncHandler(async (req, res) => {
     tr_contract: req.body.tr_contract,
     tr_start_date: req.body.tr_start_date,
     tr_cancel_date: req.body.tr_cancel_date,
+    bd_id: req.body.bd_id,
   });
 
   res.status(200).json(transList);

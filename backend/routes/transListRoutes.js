@@ -6,9 +6,13 @@ const {
   updateTransList,
   deleteTransList,
 } = require("../controllers/transListController");
+const { protect } = require("../middleware/authMiddleware");
 
-router.route("/").get(getTransList).post(setTransList);
-router.route("/:id").put(updateTransList).delete(deleteTransList);
+router.route("/").get(getTransList).post(protect, setTransList);
+router
+  .route("/:id")
+  .put(protect, updateTransList)
+  .delete(protect, deleteTransList);
 
 // router.get("/", getTransList);
 

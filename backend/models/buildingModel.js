@@ -20,15 +20,10 @@ const buildingSchema = mongoose.Schema({
     type: String,
     required: [true, "Please enter a description"],
   },
-  tr_id: {
+  u_id: {
     type: mongoose.Schema.Types.ObjectId,
     //   required: true,
-    ref: "TransactionList",
-  },
-  ld_id: {
-    type: mongoose.Schema.Types.ObjectId,
-    //   required: true,
-    ref: "Landlord",
+    ref: "User",
   },
 });
 

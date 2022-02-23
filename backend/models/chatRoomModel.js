@@ -1,15 +1,15 @@
 const mongoose = require("mongoose");
 
 const chatRoomSchema = mongoose.Schema({
-  tn_id: {
+  u_id1: {
     type: mongoose.Schema.Types.ObjectId,
     //   required: true,
-    ref: "Tenant",
+    ref: "User",
   },
-  ld_id: {
+  u_id2: {
     type: mongoose.Schema.Types.ObjectId,
     //   required: true,
-    ref: "Landlord",
+    ref: "User",
   },
 });
 

@@ -13,8 +13,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use("/api/tenants", require("./routes/tenantRoutes"));
-app.use("/api/landlords", require("./routes/landlordRoutes"));
+app.use("/api/users", require("./routes/userRoutes"));
 app.use("/api/buildings", require("./routes/buildingRoutes"));
 app.use("/api/translists", require("./routes/transListRoutes"));
 app.use("/api/rooms", require("./routes/roomRoutes"));

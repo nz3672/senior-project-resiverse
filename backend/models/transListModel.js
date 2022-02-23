@@ -17,15 +17,20 @@ const transListSchema = mongoose.Schema(
       type: Date,
       required: [true, "Please enter a text value"],
     },
-    tn_id: {
+    u_id1: {
       type: mongoose.Schema.Types.ObjectId,
       //   required: true,
-      ref: "Tenant",
+      ref: "User",
     },
-    ld_id: {
+    u_id2: {
       type: mongoose.Schema.Types.ObjectId,
       //   required: true,
-      ref: "Landlord",
+      ref: "User",
+    },
+    bd_id: {
+      type: mongoose.Schema.Types.ObjectId,
+      //   required: true,
+      ref: "Building",
     },
   },
   {

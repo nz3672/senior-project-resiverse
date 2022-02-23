@@ -6,9 +6,10 @@ const {
   updateRoom,
   deleteRoom,
 } = require("../controllers/roomController");
+const { protect } = require("../middleware/authMiddleware");
 
-router.route("/").get(getRoom).post(setRoom);
-router.route("/:id").put(updateRoom).delete(deleteRoom);
+router.route("/").get(protect, getRoom).post(protect, setRoom);
+router.route("/:id").put(protect, updateRoom).delete(protect, deleteRoom);
 
 // router.get("/", getRoom);
 

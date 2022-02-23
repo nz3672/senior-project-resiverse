@@ -1,8 +1,7 @@
 const asyncHandler = require("express-async-handler");
 
 const Chatroom = require("../models/chatRoomModel");
-const Tenant = require("../models/tenantModel");
-const Landlord = require("../models/landlordModel");
+const User = require("../models/userModel");
 
 // @desc Get Chatroom
 // @router GET /api/chatrooms
@@ -18,8 +17,8 @@ const getChatroom = asyncHandler(async (req, res) => {
 // @access Private
 const setChatroom = asyncHandler(async (req, res) => {
   const chatroom = await Chatroom.create({
-    tn_id: req.tn_id.id,
-    ld_id: req.ld_id.id,
+    u_id1: req.u_id1.id,
+    u_id2: req.u_id2.id,
   });
 
   res.status(200).json(chatroom);

@@ -10,9 +10,11 @@ const {
 } = require("../controllers/userController");
 const { protect } = require("../middleware/authMiddleware");
 
-router.route("/").get(getUser).post(registerUser);
-router.route("/:id").put(updateUser).delete(deleteUser);
+router.route("/").get(getUser);
+router.route("/register").post(registerUser);
 router.route("/login").post(loginUser);
+
+router.route("/:id").put(updateUser).delete(deleteUser);
 router.get("/me", protect, getMe);
 
 // router.get("/", getUser);

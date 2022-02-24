@@ -5,6 +5,7 @@ const {
   setBuilding,
   updateBuilding,
   deleteBuilding,
+  getBuildingByID,
 } = require("../controllers/buildingController");
 const { protect } = require("../middleware/authMiddleware");
 
@@ -12,7 +13,8 @@ router.route("/").get(protect, getBuilding).post(protect, setBuilding);
 router
   .route("/:id")
   .put(protect, updateBuilding)
-  .delete(protect, deleteBuilding);
+  .delete(protect, deleteBuilding)
+  .get(protect, getBuildingByID);
 
 // router.get("/", getBuilding);
 

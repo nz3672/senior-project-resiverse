@@ -65,9 +65,21 @@ const deleteBuilding = asyncHandler(async (req, res) => {
   res.status(200).json({ id: req.params.id });
 });
 
+const getBuildingByID = asyncHandler(async (req, res) => {
+  const building = await Building.findById(req.params.id);
+
+  if (!building) {
+    res.status(400);
+    throw new Error("Building not found");
+  }
+
+  res.status(200).json(building);
+});
+
 module.exports = {
   getBuilding,
   setBuilding,
   updateBuilding,
   deleteBuilding,
+  getBuildingByID,
 };

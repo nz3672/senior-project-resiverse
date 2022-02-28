@@ -13,7 +13,7 @@ const userSchema = mongoose.Schema({
     type: String,
     required: [true, "Please enter a name"],
   },
-  u_bankacuame: {
+  u_bankactname: {
     type: String,
   },
   u_password: {
